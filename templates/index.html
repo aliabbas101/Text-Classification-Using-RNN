@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Sarcasm Detector</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+</head>
+<body><div class="navbar-fixed">
+   <nav class="pink darken-4" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Sarcasm Detector</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{{url_for('index')}}">Home</a></li>
+         
+      </ul>
+
+      
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+</div>
+	<ul id="nav-mobile" class="sidenav">
+        <li><a href="{{url_for('index')}}">Home</a></li>
+      </ul>
+<!--Slider -->
+
+<!-- Start of Main Section -->
+ <div class="container">
+    <div class="section">
+       
+      <!--   Icon Section   -->
+
+      <div class="row">
+        <form class="col s12" method="POST" action="/analyze">
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea name="rawtext" id="textarea1" class="materialize-textarea" required></textarea>
+              <label for="textarea1">Enter Text</label>
+              <button class="btn btn-small waves-effect waves-light  grey darken-2" type="reset">Clear</button>
+              <button class="waves-effect waves-light light-blue darken-2 btn btn-small" type="submit"><i class="material-icons left">subject</i>Check</button>
+               
+            </div>
+          </div>
+
+        </form>
+      </div>
+    
+      
+    
+
+       
+
+    </div>
+  </div>
+  <!-- End -->
+
+  <!-- Result Display-->
+  <section class="section section-solutions-about deep-purple darken-2">
+ <div class="container white-text">
+ 
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12">
+          <div class="icon-block">
+            <h2 class="center white-text"><i class="material-icons">view_headline</i></h2>
+            <h5 class="center">Network Predicted </h5>
+            <h3 class="center light">{{ ctext }}</h3>
+            <div class="center alert alert-info" role="alert"><p>Processing Time: <span style="color:#ee6e73;">{{ time }} mins </span></p><br/>
+             
+        </div>
+          </div>
+        </div>
+
+        
+
+      </div>
+
+  
+  </div>
+</section>
+
+
+  
+  <footer class="page-footer deep-purple darken-1">
+    <div class="container" id="aboutapp">
+      <div class="row">
+        <div class="col l6 s12">
+          <p class="grey-text text-lighten-4">Deep Learning based Sarcasm Classifier</p>
+        </div>
+      
+       <div class="col l3 s12">
+          <ul>
+          <a href="https://gh.linkedin.com/in/aliabbas101" target="_blank" class="white-text">
+            <i class="fab fa-linkedin fa-3x"></i>
+          </a>
+          <a href="https://www.youtube.com/c/WennovationAcademy" target="_blank" class="white-text">
+            <i class="fab fa-youtube fa-3x"></i>
+          </a>
+           <a href="https://github.com/aliabbas101/" target="_blank" class="white-text">
+            <i class="fab fa-github fa-3x"></i>
+          </a>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Made by <a class="white-text text-lighten-3" href="https://github.com/aliabbas101">Ali Abbas</a><br/> 
+    </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="static/js/materialize.js"></script>
+  <script src="static/js/init.js"></script>
+<!-- Jesse JCharis -->
+  </body>
+</html>
